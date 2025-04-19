@@ -1,7 +1,12 @@
 from django.core.validators import MaxValueValidator, MinLengthValidator
 from django.db import models
 
+
 class Address(models.Model):
+    """
+    Represents a physical address.
+    Stores address details including number, street, city, state, zip code, and country ISO code.
+    """
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
     city = models.CharField(max_length=64)
@@ -13,10 +18,20 @@ class Address(models.Model):
         return f'{self.number} {self.street}'
 
     class Meta:
-        db_table="oc_lettings_site_address"
+        """
+        Metadata for the Address model.
+
+        Specifies the database table name.
+        """
+        db_table = "oc_lettings_site_address"
+        verbose_name_plural = "Addresses"
 
 
 class Letting(models.Model):
+    """
+    Represents a property letting.
+    Links a title to a specific address.
+    """
     title = models.CharField(max_length=256)
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
 
@@ -24,4 +39,9 @@ class Letting(models.Model):
         return self.title
 
     class Meta:
-        db_table="oc_lettings_site_letting"
+        """
+        Metadata for the Letting model.
+        Specifies the database table name.
+        """
+        db_table = "oc_lettings_site_letting"
+
