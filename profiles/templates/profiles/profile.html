@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}{{ profile.user.username }}{% endblock %}
+
+{% block content %}
+<h1>{{ profile.user.username }}</h1>
+<ul>
+    <li>Favorite City: {{ profile.favorite_city }}</li>
+</ul>
+{% endblock %}

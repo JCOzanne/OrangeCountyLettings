@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{{ letting.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ letting.title }}</h1>
+<address>
+    {{ letting.address.number }} {{ letting.address.street }}<br>
+    {{ letting.address.city }}, {{ letting.address.state }} {{ letting.address.zip_code }}<br>
+    {{ letting.address.country_iso_code }}
+</address>
+{% endblock %}
