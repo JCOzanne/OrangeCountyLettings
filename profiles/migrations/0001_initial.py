@@ -4,6 +4,11 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+    """
+    A data migration to create the initial database schema for user profiles.
+    This migration creates the 'Profile' model and its corresponding table 'oc_lettings_site_profile',
+    linking it to the Django User model.
+    """
 
     initial = True
 

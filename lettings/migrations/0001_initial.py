@@ -4,6 +4,11 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+    """
+    A data migration to create the initial database schema for lettings.
+    This migration creates the 'Address' and 'Letting' models and their
+    corresponding tables ('oc_lettings_site_address' and 'oc_lettings_site_letting').
+    """
 
     initial = True
 

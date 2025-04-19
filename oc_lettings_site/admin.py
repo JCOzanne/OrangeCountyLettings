@@ -1,1 +1,1 @@
-#register moved to lettings and profiles applications
+# register moved to lettings and profiles applications #
