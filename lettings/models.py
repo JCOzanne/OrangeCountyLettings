@@ -1,3 +1,12 @@
+"""
+This module defines the models for the lettings app.
+
+It includes two models:
+- Address: Represents a physical address.
+- Letting: Represents a property letting, linking a title to a specific address.
+"""
+
+
 from django.core.validators import MaxValueValidator, MinLengthValidator
 from django.db import models
 
@@ -44,4 +53,3 @@ class Letting(models.Model):
         Specifies the database table name.
         """
         db_table = "oc_lettings_site_letting"
-

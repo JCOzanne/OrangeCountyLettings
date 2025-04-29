@@ -3,7 +3,8 @@ from lettings.models import Letting, Address
 from django.urls import reverse
 from django.test import Client
 
-#testing models#
+# testing models
+
 
 @pytest.mark.django_db
 def test_address_str():
@@ -23,6 +24,7 @@ def test_address_str():
     )
     assert str(address) == "123 Main Street"
 
+
 @pytest.mark.django_db
 def test_letting_str():
     """
@@ -37,9 +39,11 @@ def test_letting_str():
     letting = Letting.objects.create(title="Sunny Apartment", address=address)
     assert str(letting) == "Sunny Apartment"
 
-#testing views and urls#
+# testing views and urls
+
 
 client = Client()
+
 
 @pytest.mark.django_db
 def test_lettings_index_view():
@@ -54,6 +58,7 @@ def test_lettings_index_view():
     assert response.status_code == 200
     assert b'<h1>Lettings</h1>' in response.content
 
+
 @pytest.mark.django_db
 def test_letting_detail_view():
     """
@@ -63,11 +68,11 @@ def test_letting_detail_view():
     :return: None
     """
 
-    address = Address.objects.create(number=1, street="Rue Pasteur", city="Paris", state="FR", zip_code=75015, country_iso_code="FR")
+    address = Address.objects.create(number=1, street="Rue Pasteur", city="Paris", state="FR",
+                                     zip_code=75015, country_iso_code="FR")
     letting = Letting.objects.create(title="Appartement Parisien", address=address)
 
     url = reverse('lettings:letting', args=[letting.id])
     response = client.get(url)
     assert response.status_code == 200
     assert b'Appartement Parisien' in response.content
-

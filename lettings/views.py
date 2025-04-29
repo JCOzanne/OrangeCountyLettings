@@ -1,3 +1,7 @@
+"""
+This module defines views for the lettings app.
+It includes views for the index page and the letting details page.
+"""
 import logging
 from django.shortcuts import render, get_object_or_404
 from sentry_sdk import capture_exception

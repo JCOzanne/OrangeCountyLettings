@@ -1,8 +1,13 @@
+"""
+This module defines views for the oc_lettings_site app.
+It includes views for the home page and error pages and a function for testing error handling.
+"""
 import logging
 from django.shortcuts import render
 from sentry_sdk import capture_exception
 
 logger = logging.getLogger(__name__)
+
 
 def index(request):
     """
@@ -20,10 +25,12 @@ def warning_404(request, exception):
     capture_exception(exception)
     return render(request, "404.html", status=404)
 
+
 def error_500(request):
     logger.error("Erreur 500 - internal server error")
     capture_exception(Exception("Internal server error"))
     return render(request, "500.html", status=500)
+
 
 def trigger_key_error(request):
     logger.error("Erreur KeyError volontaire pour tester page 500")

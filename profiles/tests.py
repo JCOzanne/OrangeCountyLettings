@@ -6,7 +6,8 @@ from profiles.models import Profile
 
 client = Client()
 
-#testing Models
+# testing Models
+
 
 @pytest.mark.django_db
 def test_profile_str():
@@ -20,7 +21,8 @@ def test_profile_str():
     profile = Profile.objects.create(user=user, favorite_city="Lyon")
     assert str(profile) == "john"
 
-#testing views and urls
+# testing views and urls
+
 
 @pytest.mark.django_db
 def test_profiles_index_view():
@@ -33,6 +35,7 @@ def test_profiles_index_view():
     response = client.get(reverse('profiles:index'))
     assert response.status_code == 200
     assert b'<h1>Profiles</h1>' in response.content
+
 
 @pytest.mark.django_db
 def test_profile_detail_view():

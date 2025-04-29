@@ -1,3 +1,6 @@
+"""
+This module defines the model for the profile's app.
+"""
 from django.db import models
 from django.contrib.auth.models import User
 
