@@ -1,5 +1,6 @@
 """
-This module contains unit tests to verify the behavior of the Django application in various scenarios. The tests include:
+This module contains unit tests to verify the behavior of the Django application
+in various scenarios. The tests include:
 
 - A dummy test to verify that the test environment is functioning correctly.
 - A test to verify that accessing a nonexistent page returns a 404 error.
