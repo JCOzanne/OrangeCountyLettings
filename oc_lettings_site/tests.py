@@ -1,3 +1,18 @@
+"""
+This module contains unit tests to verify the behavior of the Django application in various scenarios. The tests include:
+
+- A dummy test to verify that the test environment is functioning correctly.
+- A test to verify that accessing a nonexistent page returns a 404 error.
+- A test to verify that accessing a page that generates an internal error returns a 500 error.
+
+The tests use pytest and the Django test client to simulate HTTP requests and verify responses.
+
+Test functions:
+- test_dummy(): Dummy test to verify the test environment.
+- test_404_page(): Test to verify the 404 error page.
+- test_500_page(): Test to verify the 500 error page.
+"""
+
 import pytest
 from django.test import Client
 
