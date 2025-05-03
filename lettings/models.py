@@ -24,6 +24,12 @@ class Address(models.Model):
     country_iso_code = models.CharField(max_length=3, validators=[MinLengthValidator(3)])
 
     def __str__(self):
+        """
+        Returns a string representation of the address.
+
+        The string consists of the address number and street.
+        :return: str : A string representing the object
+        """
         return f'{self.number} {self.street}'
 
     class Meta:
