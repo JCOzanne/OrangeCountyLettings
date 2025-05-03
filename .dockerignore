@@ -2,10 +2,11 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.db
 *.log
 .env
 venv/
 .env.*
 .idea/
 .DS_Store
+.git
+.gitignore
