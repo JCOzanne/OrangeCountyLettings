@@ -33,6 +33,7 @@ jobs:
       - name: Run tests with coverage
         env:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: pytest --cov --cov-report=term-missing
 
   deploy:
@@ -62,3 +63,5 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/orangecountylettings:latest
             ${{ secrets.DOCKER_USERNAME }}/orangecountylettings:${{ github.sha }}
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
