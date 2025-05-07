@@ -63,4 +63,3 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/orangecountylettings:latest
             ${{ secrets.DOCKER_USERNAME }}/orangecountylettings:${{ github.sha }}
-          
