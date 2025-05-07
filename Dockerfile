@@ -21,8 +21,8 @@ RUN mkdir -p static staticfiles
 ## Collect static files
 #RUN python manage.py collectstatic --noinput
 
-# Collect static files
-RUN python manage.py collectstatic --noinput
+## Collect static files
+#RUN python manage.py collectstatic --noinput
 
 # Expose the port on which the application will run
 EXPOSE 8000
