@@ -4,15 +4,6 @@ FROM python:3.12-slim
 # Set work directory
 WORKDIR /app
 
-# Accept build-time variables
-ARG SECRET_KEY
-ARG DEBUG
-ARG SENTRY_DSN
-
-ENV SECRET_KEY=$SECRET_KEY
-ENV DEBUG=$DEBUG
-ENV SENTRY_DSN=$SENTRY_DSN
-
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
