@@ -63,7 +63,4 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/orangecountylettings:latest
             ${{ secrets.DOCKER_USERNAME }}/orangecountylettings:${{ github.sha }}
-          build-args: |
-            SECRET_KEY=${{ secrets.SECRET_KEY }}
-            DEBUG=False
-            SENTRY_DSN=${{ secrets.SENTRY_DSN }}
+          
