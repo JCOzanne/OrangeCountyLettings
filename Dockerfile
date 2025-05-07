@@ -18,7 +18,10 @@ COPY . /app/
 # Create static directory if it doesn't exist
 RUN mkdir -p static staticfiles
 
-
+# Collect static files - Use a temporary key only for the build phase
+ENV SECRET_KEY="temporary key"
+RUN python manage.py collectstatic --noinput
+ENV SECRET_KEY=""
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
