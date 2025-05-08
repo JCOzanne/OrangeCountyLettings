@@ -15,11 +15,8 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy the project in the work directory
 COPY . /app/
 
-# Create static directory if it doesn't exist
-RUN mkdir -p static staticfiles
-
-## Collect static files
-#RUN python manage.py collectstatic --noinput
+# Create static and staticfiles directories if it doesn't exist
+RUN mkdir -p /app/static /app/staticfiles
 
 ## Collect static files
 #RUN python manage.py collectstatic --noinput
