@@ -18,11 +18,11 @@ COPY . /app/
 # Create static and staticfiles directories if it doesn't exist
 RUN mkdir -p /app/static /app/staticfiles
 
-## Collect static files
-#RUN python manage.py collectstatic --noinput
+# Ensure start.sh is executable
+RUN chmod +x /app/start.sh
 
 # Expose the port on which the application will run
 EXPOSE 8000
 
-# Running the application
-CMD ["gunicorn", "oc_lettings_site.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Run the app using the custom start script
+CMD ["./start.sh"]
