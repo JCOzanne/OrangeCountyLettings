@@ -3,6 +3,8 @@ This module defines views for the oc_lettings_site app.
 It includes views for the home page and error pages and a function for testing error handling.
 """
 import logging
+
+from django.http import HttpResponse
 from django.shortcuts import render
 from sentry_sdk import capture_exception
 
@@ -36,3 +38,6 @@ def trigger_key_error(request):
     logger.error("Erreur KeyError volontaire pour tester page 500")
     my_dict = {"clé": "valeur"}
     return my_dict["autre_clé"]
+
+def health_check(request):
+    return HttpResponse("OK", status=200)
