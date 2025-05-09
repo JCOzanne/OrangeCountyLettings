@@ -15,6 +15,9 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy the project in the work directory
 COPY . /app/
 
+# COPY the start script
+COPY start.sh /app/start.sh
+
 # Create static and staticfiles directories if it doesn't exist
 RUN mkdir -p /app/static /app/staticfiles
 
