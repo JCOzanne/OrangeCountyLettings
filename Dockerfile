@@ -28,4 +28,4 @@ RUN chmod +x /app/start.sh
 EXPOSE 8000
 
 # Run the app using the custom start script
-CMD ["./start.sh"]
+CMD ["/bin/bash", "-c", "./start.sh"]
