@@ -39,5 +39,6 @@ def trigger_key_error(request):
     my_dict = {"clé": "valeur"}
     return my_dict["autre_clé"]
 
+
 def health_check(request):
     return HttpResponse("OK", status=200)
