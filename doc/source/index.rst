@@ -11,20 +11,18 @@ Add your content using ``reStructuredText`` syntax. See the
 documentation for details.
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
 .. toctree::
    :maxdepth: 2
    :caption: Contenu :
+   :titlesonly:
 
-   description du projet
-   technologies utilisées
+   description_projet
+   technologies
    installation
-   guide de demarrage rapide
-   structure de la Base De Données et des modèles
-   description de l'interface de programmation
-   guide d'utilisation
+   guide_demarrage_rapide
+   description_BDD_modeles
+   interface_programmation
+   guide_utilisation
    deploiement
 
