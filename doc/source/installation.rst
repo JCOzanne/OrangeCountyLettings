@@ -1,4 +1,4 @@
-Guide de démarrage
+Installation
 ==================
 
 Installation locale (environnement virtuel)

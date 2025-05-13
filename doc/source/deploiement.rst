@@ -45,7 +45,7 @@ Le comportement est le suivant :
 L’application est entièrement contenue dans une image Docker :
 
 - Le `Dockerfile` définit l’environnement Python, les dépendances et le serveur Gunicorn
-- Les variables sensibles (`SECRET_KEY`, `SENTRY_DSN` et 'DEBUG') sont injectées à la build via GitHub Secrets
+- Les variables sensibles (`SECRET_KEY`, `SENTRY_DSN` et 'DEBUG') sont injectées au build via GitHub Secrets
 - Les fichiers statiques sont collectés automatiquement au démarrage grâce à un script `start.sh`
 
 Exemple de build local :
@@ -75,7 +75,7 @@ L’image Docker est utilisée sur [Render](https://render.com) pour la mise en 
 
 - `DEBUG=False` en production
 - `ALLOWED_HOSTS` est dynamique avec la variable `RENDER_EXTERNAL_HOSTNAME`
-- Aucune variable sensible n’est codée en dur (tout passe par `.env` ou secrets GitHub)
+- Aucune variable sensible n’est exposée (tout passe par `.env` ou secrets GitHub)
 
 6. **Déploiement manuel (Render)**
 
@@ -92,4 +92,4 @@ Une image Docker peut être récupérée depuis Docker Hub puis lancée sans le 
 .. code-block:: bash
 
    docker pull <utilisateur>/orangecountylettings:latest
-   docker run -p 8000:8000 --env-file .env <utilisateur>/orangecountylettings:latest
+   docker run -p 8000:8000  <utilisateur>/orangecountylettings:latest

@@ -2,7 +2,7 @@ Technologies utilisées
 ======================
 
 Langages de programmation
-=========================
+-------------------------
 
 .. list-table::
    :header-rows: 1
@@ -26,7 +26,7 @@ Langages de programmation
 
 
 Autres technologies
-=========================
+-------------------
 
 - `Django <https://docs.djangoproject.com/fr/5.2/>`__ :
 Django est un framework web Python de haut niveau qui favorise un développement rapide et une conception claire et pragmatique.
