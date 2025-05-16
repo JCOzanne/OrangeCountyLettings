@@ -83,13 +83,3 @@ Sur Render, assurez-vous que :
 
 - Le mode de déploiement automatique est **désactivé**
 - Le bouton **Manual Deploy** est utilisé uniquement après validation du pipeline CI
-
-Reproduire le déploiement localement
--------------------------------------
-
-Une image Docker peut être récupérée depuis Docker Hub puis lancée sans le code source :
-
-.. code-block:: bash
-
-   docker pull <utilisateur>/orangecountylettings:latest
-   docker run -p 8000:8000  <utilisateur>/orangecountylettings:latest

@@ -42,15 +42,29 @@ Installation locale (environnement virtuel)
 Installation via Docker
 ------------------------
 
-1. Construisez l'image Docker :
+ ::
+
+   # Prélables :
+
+  - Avoir configuré son compte Docker Hub
+
+  - Dans le dossier de votre choix, créer un fichier .env avec les variables suivantes :
+  SECRET_KEY -> votre clé secrète Django
+  (Vous pouvez en générer une en tapant la commande
+  python -c 'import secrets; print(secrets.token_urlsafe(50))'
+  dans votre terminal)
+  DEBUG=True en développement, False en production
+  SENTRY_DSN -> votre dsn Sentry
+
+1. Extraire l'image Docker :
    ::
 
-     docker build -t orangecountylettings .
+     docker pull jcozanne/orangecountylettings:latest.
 
 2. Lancez le conteneur :
    ::
 
-     docker run -p 8000:8000 orangecountylettings
+     docker run -p 8000:8000 --env-file .env jcozanne/orangecountylettings:latest
 
 3. Accédez à l'application :
    Ouvrez votre navigateur à l'adresse : http://localhost:8000

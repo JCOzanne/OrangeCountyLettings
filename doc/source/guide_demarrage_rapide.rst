@@ -20,11 +20,11 @@ Prérequis : avoir un compte Sentry et un dsn sentry
      # Installer les dépendances
      pip install -r requirements.txt
 
-     # Configurer l'environnement (créer un fichier .env)
+     # Configurer l'environnement : créer un fichier .env avec les variables suivantes
      SECRET_KEY -> votre clé secrète Django
-     Vous pouvez en générer un en tapant la commande
+     (Vous pouvez en générer une en tapant la commande
      python -c 'import secrets; print(secrets.token_urlsafe(50))'
-     dans votre terminal
+     dans votre terminal)
      DEBUG=True en développement, False en production
      SENTRY_DSN -> votre dsn Sentry
 
@@ -68,15 +68,29 @@ Pages principales
 +---------------------------+----------------------------------------------------------+
 
 
-Utilisation avec Docker
+Installation avec Docker
 -----------------------
 
 Pour un démarrage rapide avec **Docker** :
 
-::
+ ::
 
-  # Construire et exécuter l'image Docker
-  docker build -t orangecountylettings
-  docker run -p 8000:8000 orangecountylettings
+  # Préalables
+
+  - Avoir configuré son compte Docker Hub
+
+  - Dans le dossier de votre choix, créer un fichier .env avec les variables suivantes :
+  SECRET_KEY -> votre clé secrète Django
+  (Vous pouvez en générer une en tapant la commande
+  python -c 'import secrets; print(secrets.token_urlsafe(50))'
+  dans votre terminal)
+  DEBUG=True en développement, False en production
+  SENTRY_DSN -> votre dsn Sentry
+
+  # Extraire et exécuter l'image Docker
+
+  docker pull jcozanne/orangecountylettings:latest
+  docker run -p 8000:8000 --env-file .env jcozanne/orangecountylettings:latest
+
 
 L'application sera accessible à l'adresse : http://127.0.0.1:8000/
