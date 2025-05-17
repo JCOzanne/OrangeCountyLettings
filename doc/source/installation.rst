@@ -46,7 +46,7 @@ Installation via Docker
 
    # Prélables :
 
-  - Avoir configuré son compte Docker Hub
+  - Docker installé sur sa machine
 
   - Dans le dossier de votre choix, créer un fichier .env avec les variables suivantes :
   SECRET_KEY -> votre clé secrète Django

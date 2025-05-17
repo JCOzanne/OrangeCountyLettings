@@ -77,7 +77,7 @@ Pour un démarrage rapide avec **Docker** :
 
   # Préalables
 
-  - Avoir configuré son compte Docker Hub
+  - docker installé sur sa machine
 
   - Dans le dossier de votre choix, créer un fichier .env avec les variables suivantes :
   SECRET_KEY -> votre clé secrète Django

@@ -62,7 +62,7 @@ L’image Docker est utilisée sur [Render](https://render.com) pour la mise en 
 - Création d’un **Web Service** de type "Docker image"
 - Image utilisée : `docker.io/<utilisateur>/orangecountylettings:latest`
 - Port exposé : `8000`
-- Variables d’environnement : définies dans Render (SECRET_KEY, DEBUG, SENTRY_DSN, etc.)
+- Variables d’environnement : définies dans Render (SECRET_KEY, DEBUG, SENTRY_DSN)
 - Commande de démarrage personnalisée : `./start.sh`
 
 4. **Gestion des fichiers statiques**
